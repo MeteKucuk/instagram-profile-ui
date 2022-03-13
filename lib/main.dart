@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:instagram_profile/login.dart';
 import 'package:ipa/ipa.dart' as ipa;
 
+import 'view/controller/controller.dart';
 import 'view/profile.dart';
 
 void main() async {
@@ -31,6 +33,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(Controller());
     return Scaffold(
       body: Builder(
         builder: (context) {
@@ -39,7 +42,7 @@ class Home extends StatelessWidget {
               future: ipa.IPA().getProfile(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return InstaProfilePage(profile: snapshot.data!);
+                  return Profile(profile: snapshot.data!);
                 }
 
                 return const CircularProgressIndicator();

@@ -40,13 +40,19 @@ dependencies:
   path_provider: ^2.0.9
   visibility_detector: ^0.2.2
   intl: ^0.17.0
-  scrollable_positioned_list: ^0.2.3
   lottie: ^1.2.2
+  like_button: ^2.0.4
+  auto_size_text: ^3.0.0
+  scrollable_positioned_list: ^0.2.3
+  get: ^4.6.1
   
 
   ipa:
     path: /Users/EmirKucuk/Desktop/flutter_lib/ipa
   wakatime: ^0.1.0
+
+  man:
+    path: /Users/EmirKucuk/Desktop/man
     
 
 dev_dependencies:
@@ -101,3 +107,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  

@@ -9,20 +9,21 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: ElevatedButton(
-        child: const Text("Login"),
-        onPressed: (() async {
-          await ipa.IPA.login(context: context);
+        child: ElevatedButton(
+          onPressed: () async {
+            await ipa.IPA.login(context: context);
 
-          final profile = await ipa.IPA().getProfile();
+            final profile = await ipa.IPA().getProfile();
 
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => InstaProfilePage(profile: profile),
-            ),
-          );
-        }),
-      )),
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Profile(profile: profile),
+              ),
+            );
+          },
+          child: const Text("Login"),
+        ),
+      ),
     );
   }
 }
